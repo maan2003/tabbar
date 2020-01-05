@@ -1,0 +1,94 @@
+html{
+    font-family: 'Segoe UI';
+    background-color: #F2F2F2;
+    /* tweak width on higher display resolution */
+    width: 600px;
+}
+body{
+    margin:10px 10px 0px 10px;
+}
+/* button for the start fresh and new tabs */
+.drop-shadow{
+    box-shadow: 0px 1.6px 3.6px rgba(0,0,0,0.13), 0px 0px 2.9px rgba(0,0,0,0.11);
+}
+.drop-shadow:hover{
+    box-shadow: 0px 3.2px 7.2px rgba(0,0,0,0.26), 0px 0px 5.8px rgba(0,0,0,0.22);
+}
+.btn{
+    background-color: #0078d4;
+    color:#fff;
+    padding: 5px 10px;
+    position: relative;
+    display: inline-block;
+}
+.tgroup{
+    display: flex;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    /* Change flex-wrap to wrap if you want multiple rows instead of scroll bar */
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+/* tabs */
+.t{
+    position: relative;
+    /* change max and min width customise tab size */
+    max-width: 150px;
+    min-width: 100px;
+    margin-right: 1em;
+    /* hide the overflowing image */
+    overflow: hidden;
+}
+.tname{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 5px 10px;
+    background-color: #fff;
+    opacity: 0.9;
+    font-size:12px;
+    white-space: nowrap;
+}
+img{
+    height: 100px;
+}
+/* Tab close button */
+.cross{
+    /* Hidden by default */
+    display: none;
+    position: absolute;
+    bottom:0;
+    right:0;
+    padding: 5px;
+    font-family: "Segoe MDL2 Assets";
+    font-size: 1.2em;
+    z-index: 9;
+    background-color: white;
+    /* Color defualts to black when --cross-color is not defined */
+    color:var(--cross-color)
+}
+/* Active should have blue accent color. Remove next 2 block to remove this functionaliy */
+.t:hover>.tname{
+    opacity: 1;
+}
+/* Make close button Vissibe when a tab is hovered */
+.t:hover>.cross{
+    display: block;
+}
+/* Make tab close btn red when hovered */
+.cross:hover{
+    color:red;
+}
+.t.active{
+    border:#0078d4ff solid 2px
+}
+.t.active>.tname{
+    background-color: #0078d4;
+    color:white;
+}
+/* active tabs cross button have white color */
+.t.active>.cross{
+    background-color: #0078d4;
+    --cross-color:white
+}

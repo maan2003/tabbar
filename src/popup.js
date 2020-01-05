@@ -49,7 +49,7 @@ function tabCloser() {
 // changes the active tab
 function tabSwithcer() {
     // disable close btn events being captured
-    if(this==event.target){
+    if(!event.target.classList.contains("cross")){
     tabid = parseInt(this.getAttribute("tabid"))
     // change active tab
     chrome.tabs.update(tabid, { active: true })
